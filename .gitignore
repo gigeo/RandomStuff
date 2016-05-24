@@ -1,0 +1,166 @@
+
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+    
+<!--<base href="/app/">-->
+    <meta name="fragment" content="!" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title tw-update-title></title>
+    <meta name="description" tw-update-meta-desc>
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/v3/styles/compiled.8435e6e3.css">
+  </head>
+  <body ng-class="{'narrow-body' : !config.isLoggedin()  || !('grid' | includedByState)}">
+    <div class="fullpage-bg"></div>
+  <tw-nav-bar></tw-nav-bar>
+
+  <div ui-view></div>
+
+  <div growl=""></div>
+
+  <!-- Splash screen -->
+  <!-- Done without directive and inline so that it's independent of angularJS loading and shows immediately. -->
+  <script>
+    setTimeout(function () {
+      document.getElementById('splash-too-long').style.display = 'block';
+    }, 10000);
+  </script>
+
+  <div id="splash" class="fullpage-notice-wrapper fullpage-bg" ng-hide="isConfigLoaded">
+    <div class="container">
+      <div class="fullpage-notice col-md-offset-3 col-md-6 text-center">
+        <h3><i class="fa fa-cog fa-spin"></i> Loading Tweepi</h3>
+        <div id="splash-too-long">
+          Trouble loading Tweepi? Please <a href="http://getsatisfaction.com/tweepi/topics/new">report it</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // Splash screen -->
+
+  <!--[if lte IE 8]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <script>
+      document.getElementById('loading-wrapper').innerHTML = '<small><small>Internet Explorer older than version 9 is not supported. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</small></small>';
+    </script>
+  <![endif]-->
+
+    <script keep-in-snapshot>
+    (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
+    c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+    c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+    _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+    (window,document,"script","50db73951bf079f60b00019b");
+
+  window._errs.meta = {
+    isAuthenticated: true,
+    screenName: 'BirthdayGigeo'
+  };
+  
+  // see https://errorception.com/docs/allow
+  window._errs.allow = function(error) {
+    // IE9 error that does not show any issue on client side
+    if(navigator.userAgent.indexOf("MSIE 9") !== -1 &&
+        error.message && error.message.indexOf('Invalid target element for this operation') !== -1) {
+      return false;
+    }
+    
+    // IE9 error sometime throws 
+    if(navigator.userAgent.indexOf("MSIE 9") !== -1 &&
+        error.message && error.message.indexOf('\'console\' is undefined') !== -1) {
+      return false;
+    }
+    
+    // ignore Opera Mini
+    if(navigator.userAgent.indexOf("Opera Mini") !== -1) {
+      return false;
+    }
+    
+    // ignore timeout errors
+    if(error.message && error.message.indexOf('timed out') !== -1) {
+      return false;
+    }
+    
+    // ignore eshopcomp.com error
+    if(error.stack && error.stack.indexOf('eshopcomp.com') !== -1) {
+      return false;
+    }
+    
+    return true; // log all error
+  };
+</script>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.5/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
+  <![endif]-->
+
+  <script src="/v3/scripts/vendor.66995086.js"></script>
+<script src="/v3/scripts/scripts.25f05b39.js"></script>  <script type="text/javascript">
+    // Fix invalid hashes to #!
+    var hashVal = window.location.hash;
+    if (hashVal && hashVal.substring(0, 2) === '#/' || hashVal.substring(0, 4) === '#%21') {
+      window.location = window.location.href.replace(/#\/|#%21\//, '#!/');
+    }
+
+    var constants = {
+      APP_VERSION: '25f05b39-66995086-8435e6e3',
+      URL_BASE: '',
+      URL_PREFIX: '/',
+      CONFIG_URL: 'account/get_config.json',
+      USER_CONFIG_URL: 'account/get_user_config.json'
+    };
+    var tweepiApp = angular.module('tweepiApp').value('INIT_CONSTANTS', constants);
+    loadAppConfig(tweepiApp, constants);
+  </script>
+
+  
+      <script type="text/javascript" keep-in-snapshot>
+  var _kmq = _kmq || [];
+  var _kmk = _kmk || 'f24aab1869054e4310e3f4ff44e95beeb731ea41';
+  function _kms(u){
+    setTimeout(function(){
+      var d = document, f = d.getElementsByTagName('script')[0],
+      s = d.createElement('script');
+      s.type = 'text/javascript'; s.async = true; s.src = u;
+      f.parentNode.insertBefore(s, f);
+    }, 1);
+  }
+  _kms('//i.kissmetrics.com/i.js');
+  _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+</script>    <script type="text/javascript" keep-in-snapshot>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7899407-6']);
+  
+      
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>    <script type="text/javascript">
+  function usisMob() {
+    var ua = (navigator.userAgent || navigator.vendor || window.opera);
+    return ((/Android|iPhone|iPad|iPod/i).test(ua) && !(/Firefox/i).test(ua));
+  }
+  if (!usisMob()) {
+    (function () {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = '//api.usersnap.com/load/' +
+              '488baca7-756f-49b6-abc7-9d1878bb8396.js';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    })();
+  }
+</script>  </body>
+</html>
